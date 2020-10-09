@@ -1,0 +1,30 @@
+<script type="text/javascript">
+function show(s) {
+	alert(s);
+}
+function house(n,v,d) {
+	var na;
+	this.version = 1;
+	this.session = "test";
+	this.enable = true;
+	this.name = n;
+	this.value = v;
+	this.document = document;
+	this.show = show;
+	this.na = na;
+}
+function objinfo(obj) {
+	for(var i in obj){
+		document.write("<p>object["+i+"]="+obj[i]+
+		" typeof()=<B>"+typeof(obj[i])+"</B>");
+	}
+}
+
+var name = new String("myhouse");
+var value = new Number(123);
+var myhouse = new house(name,value,document);
+ document.write("<p>"+myhouse);
+ objinfo(myhouse);
+ myhouse["show"]("hello");
+document.write("<p>"+this);
+</script> 
